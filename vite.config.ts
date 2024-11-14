@@ -4,7 +4,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
-  base: ".",
+  base: "https://github.com/Nirajsah17/book_heaven/tree/gh-pages",
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
