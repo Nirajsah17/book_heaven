@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// Connection URL (replace <dbname> with your database name)
 const dbURI = process.env.MONGODB_URI;
 
 const connectDB = async () => {
@@ -12,7 +11,7 @@ const connectDB = async () => {
     console.log('MongoDB connected successfully.');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
-    process.exit(1); // Exit process with failure
+    process.exit(1);
   }
 };
 

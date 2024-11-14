@@ -1,7 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const exampleController = require('../controllers/exampleController');
+const userController = require("../controllers/userController");
 
-router.get('/', exampleController.getExampleData);
+// Nodemailer configuration
+
+
+router.post('/register', userController.registerUser);
+router.get('/verify-email', userController.verifyEmail);
+router.post('/login', userController.login);
+router.post('/logout', userController.logout);
 
 module.exports = router;

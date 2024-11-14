@@ -10,12 +10,12 @@ const port = process.env.PORT || 3000;
 
 // Connect to the database
 connectDB();
+app.use(express.json());
 
 // Middleware to parse JSON
-app.use('/api/users', userRoute);
+app.use('/api/user', userRoute);
 app.use('/api/ratings', ratingRoute);
 app.use('/api/books',bookRoute );
-app.use(express.json());
 
 // Simple route
 app.get('/', (req, res) => {
