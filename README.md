@@ -40,3 +40,16 @@ To set up **Book Heaven** locally, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/username/Book Heaven.git
+   ```
+
+2. `cd Book Heaven`
+
+3. Install dependencies [Make sure you have node]
+
+  ```bash
+  npm install
+  ```
+4. Run app
+  ```bash
+  npm run dev
+  ```
