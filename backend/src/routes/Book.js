@@ -1,16 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const books = require("../controllers/BookController")
+const books = require("../controllers/BookController");
+const requireAuth = require("../middlewares/authMiddleware");
 
-// router.get("/", (req, res)=>{
-//   res.json({
-//     message: "All books related routes are here"
-//   })
-// });
-
-router.get("/getAll", books.getAllBook );
-router.get("/pagination", books.getPaginatedItem);
-router.get("/search", books.searchBook);
-router.get("/filter", books.filterBooks);
+router.post("/getAll", requireAuth, books.getAllBook );
+router.post("/pagination", requireAuth, books.getPaginatedItem);
+router.post("/search", requireAuth, books.searchBook);
+router.post("/filter", requireAuth, books.filterBooks);
 
 module.exports = router;

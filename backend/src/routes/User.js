@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const userController = require("../controllers/userController");
 
-// Nodemailer configuration
-
 
 router.post('/register', userController.registerUser);
 router.get('/verify-email', userController.verifyEmail);

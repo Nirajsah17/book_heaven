@@ -4,12 +4,18 @@ const bookRoute = require("./routes/Book");
 const ratingRoute = require("./routes/Rating");
 const userRoute = require("./routes/User");
 const connectDB = require('./config/database');
+const cors = require('cors');
+
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Connect to the database
 connectDB();
+app.use(cors({
+  origin: '*', // specify the allowed origin
+  methods: ['GET', 'POST'], // specify the allowed methods
+}));
 app.use(express.json());
 
 // Middleware to parse JSON

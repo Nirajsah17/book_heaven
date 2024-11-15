@@ -1,6 +1,6 @@
 const requireAuth = (req, res, next) => {
-  const token = req.cookies.token;
-  if (!token) return res.status(401).send('Unauthorized');
+  const token = req.cookies?.token || undefined;
+  if (!token) return res.status(401).send({msg:'Unauthorized'});
 
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET);
@@ -11,6 +11,4 @@ const requireAuth = (req, res, next) => {
   }
 };
 
-module.exports = {
-  requireAuth
-}
+module.exports = requireAuth
